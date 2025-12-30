@@ -10,3 +10,10 @@
 - set .env key
 - use middleware.ts
 - use and wrap your app(layout.tsx) in clerkprovider
+
+### For Cloud we are using Neon with AWS, In connect database, it will give us connection string and we will use PRISMA
+- first, get the .env
+- second, with the PRISMA
+
+### For setting up with the Voice Agent, we are using VAPI
+- ist, create assistants and copy the assistant ID
