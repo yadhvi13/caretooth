@@ -15,5 +15,9 @@
 - first, get the .env
 - second, with the PRISMA
 
+### What is PRISMA??
+- PRISMA is an ORM(object relational mapping) it works as a translator between your code and your database
+- By writing simple JAVASCRIPT/TYPESCRIPT code, it translates it for your database.
+
 ### For setting up with the Voice Agent, we are using VAPI
 - ist, create assistants and copy the assistant ID
