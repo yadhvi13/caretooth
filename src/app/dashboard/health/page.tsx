@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ActivityIcon, TrophyIcon, StarIcon, CheckCircle2Icon, FlameIcon } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { ActivityIcon, TrophyIcon, StarIcon, CheckCircle2Icon, FlameIcon, BellRingIcon, SmartphoneIcon } from "lucide-react";
 import { toast } from "sonner";
 
 // Generate last 7 days
@@ -41,6 +42,23 @@ export default function HealthTracker() {
 
   const streak = 12; // mock streak
   const healthScore = 85; // mock score
+
+  const [reminders, setReminders] = useState({
+    morning: true,
+    night: true,
+    floss: false
+  });
+
+  const triggerTestNotification = () => {
+    toast("Time to Brush! 🦷", {
+      description: "Don't break your 12-day streak. Grab your toothbrush!",
+      icon: <BellRingIcon className="w-5 h-5 text-primary" />,
+      action: {
+        label: "Log It",
+        onClick: () => console.log("Logged from toast")
+      },
+    });
+  };
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
@@ -142,6 +160,69 @@ export default function HealthTracker() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Smart Reminders Settings */}
+      <Card className="border-border/50 shadow-md">
+        <CardHeader className="border-b border-border/50 bg-muted/10">
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="flex items-center gap-2">
+                <BellRingIcon className="w-5 h-5 text-primary" />
+                Smart Reminders
+              </CardTitle>
+              <CardDescription>Get push notifications so you never break your streak.</CardDescription>
+            </div>
+            <Button variant="outline" size="sm" onClick={triggerTestNotification} className="hidden sm:flex border-primary/20 hover:bg-primary/5 text-primary">
+              <SmartphoneIcon className="w-4 h-4 mr-2" />
+              Test Notification
+            </Button>
+          </div>
+        </CardHeader>
+        <CardContent className="pt-6">
+          <div className="space-y-6 max-w-2xl">
+            
+            <div className="flex items-center justify-between">
+              <div className="space-y-0.5">
+                <h4 className="font-semibold text-base">Morning Brushing</h4>
+                <p className="text-sm text-muted-foreground">Receive a reminder at 8:00 AM</p>
+              </div>
+              <Switch 
+                checked={reminders.morning}
+                onCheckedChange={(c) => setReminders(p => ({...p, morning: c}))}
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="space-y-0.5">
+                <h4 className="font-semibold text-base">Night Brushing</h4>
+                <p className="text-sm text-muted-foreground">Receive a reminder at 9:30 PM</p>
+              </div>
+              <Switch 
+                checked={reminders.night}
+                onCheckedChange={(c) => setReminders(p => ({...p, night: c}))}
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="space-y-0.5">
+                <h4 className="font-semibold text-base">Daily Floss</h4>
+                <p className="text-sm text-muted-foreground">Receive a gentle reminder to floss after dinner</p>
+              </div>
+              <Switch 
+                checked={reminders.floss}
+                onCheckedChange={(c) => setReminders(p => ({...p, floss: c}))}
+              />
+            </div>
+
+            <Button variant="outline" size="sm" onClick={triggerTestNotification} className="w-full sm:hidden border-primary/20 text-primary mt-4">
+              <SmartphoneIcon className="w-4 h-4 mr-2" />
+              Test Push Notification
+            </Button>
+
+          </div>
+        </CardContent>
+      </Card>
+
     </div>
   );
 }
