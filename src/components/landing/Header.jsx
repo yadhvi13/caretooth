@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '../ui/button'
-import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton, useUser } from '@clerk/nextjs'
 import { Menu, X } from 'lucide-react'
 
 const Header = () => {
@@ -42,7 +42,14 @@ const Header = () => {
                         </SignUpButton>
                     </SignedOut>
                     <SignedIn>
-                        <UserButton />
+                        <div className="flex items-center gap-4">
+                            <Link href="/dashboard">
+                                <Button size="sm" className="font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-md shadow-primary/20 hover:shadow-primary/40 transition-all">
+                                    Dashboard
+                                </Button>
+                            </Link>
+                            <UserButton />
+                        </div>
                     </SignedIn>
                 </div>
 
@@ -76,8 +83,15 @@ const Header = () => {
                             </SignUpButton>
                         </SignedOut>
                         <SignedIn>
-                            <div className="flex justify-center">
-                                <UserButton />
+                            <div className="flex flex-col gap-4 w-full">
+                                <Link href="/dashboard" onClick={toggleMenu} className="w-full">
+                                    <Button className="w-full font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300">
+                                        Go to Dashboard
+                                    </Button>
+                                </Link>
+                                <div className="flex justify-center mt-2">
+                                    <UserButton />
+                                </div>
                             </div>
                         </SignedIn>
                     </div>
