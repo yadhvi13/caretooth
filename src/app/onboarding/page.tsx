@@ -48,7 +48,7 @@ export default function Onboarding() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-background via-muted/10 to-primary/5 p-6">
       
       <div className="mb-12 flex flex-col items-center">
-        <Image src="/Logo.png" alt="Logo" width={48} height={48} className="mb-4" />
+        <Image src="/logo.png" alt="Logo" width={48} height={48} className="mb-4" />
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-center">Welcome to CareTooth</h1>
         <p className="text-muted-foreground mt-2 text-center max-w-md">
           To get started, please tell us how you plan to use our platform.

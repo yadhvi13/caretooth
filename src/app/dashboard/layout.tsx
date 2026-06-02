@@ -50,7 +50,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           {/* Mobile Header */}
           <div className="md:hidden flex items-center justify-between p-4 bg-background border-b border-border/50 sticky top-0 z-50">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/Logo.png" alt="Logo" width={28} height={28} />
+              <Image src="/logo.png" alt="Logo" width={28} height={28} />
               <span className="font-semibold text-lg">CareTooth</span>
             </Link>
             <div className="flex items-center gap-4">
@@ -69,7 +69,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           `}>
             <div className="p-6 hidden md:flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2">
-                <Image src="/Logo.png" alt="Logo" width={32} height={32} />
+                <Image src="/logo.png" alt="Logo" width={32} height={32} />
                 <span className="font-semibold text-xl">CareTooth</span>
               </Link>
             </div>
