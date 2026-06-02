@@ -25,23 +25,34 @@ const last7Days = Array.from({ length: 7 }).map((_, i) => {
 export default function HealthTracker() {
   const [days, setDays] = useState(last7Days);
 
+  const [streak, setStreak] = useState(12);
+  const [healthScore, setHealthScore] = useState(85);
+
   const toggleHabit = (index: number, habit: 'brushed' | 'flossed') => {
     const newDays = [...days];
+    const isNowCompleted = !newDays[index][habit];
     newDays[index] = {
       ...newDays[index],
-      [habit]: !newDays[index][habit]
+      [habit]: isNowCompleted
     };
     setDays(newDays);
     
-    if (newDays[index][habit]) {
+    if (newDays[index].isToday) {
+      if (isNowCompleted) {
+        setStreak(prev => prev + 1);
+        setHealthScore(prev => Math.min(100, prev + 2));
+      } else {
+        setStreak(prev => Math.max(0, prev - 1));
+        setHealthScore(prev => Math.max(0, prev - 2));
+      }
+    }
+
+    if (isNowCompleted) {
       toast.success(`Great job! You logged your ${habit === 'brushed' ? 'brushing' : 'flossing'} for today.`, {
         icon: '🦷'
       });
     }
   };
-
-  const streak = 12; // mock streak
-  const healthScore = 85; // mock score
 
   const [reminders, setReminders] = useState({
     morning: true,
@@ -105,9 +116,9 @@ export default function HealthTracker() {
               14 Day Streak
             </div>
             <div className="w-full bg-muted rounded-full h-2.5 mt-3">
-              <div className="bg-yellow-500 h-2.5 rounded-full" style={{ width: `${(streak/14)*100}%` }}></div>
+              <div className="bg-yellow-500 h-2.5 rounded-full transition-all duration-1000 ease-out" style={{ width: `${Math.min(100, (streak/14)*100)}%` }}></div>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">Just 2 more days to unlock the Star Brusher badge!</p>
+            <p className="text-xs text-muted-foreground mt-2">Just {Math.max(0, 14 - streak)} more days to unlock the Star Brusher badge!</p>
           </CardContent>
         </Card>
       </div>
