@@ -3,10 +3,11 @@ import { SignUpButton } from '@clerk/nextjs'
 import { Button } from '../ui/button'
 import { MicIcon,CalendarHeartIcon, StarIcon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center overflow-hidden pt-20">
+    <section className="relative min-h-[100dvh] lg:h-screen flex items-center overflow-hidden pt-20">
     {/* GRID BG  */}
     <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/5 to-primary/5">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20"></div>
@@ -31,7 +32,7 @@ const Hero = () => {
               </div>
 
               {/* MAIN HEADING */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight">
                 <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
                   Your dental
                 </span>
@@ -61,17 +62,17 @@ const Hero = () => {
                 </Button>
               </SignUpButton>
 
-              <SignUpButton mode="modal">
+              <Link href="/book">
                 <Button size={"lg"} variant={"outline"}>
                   <CalendarHeartIcon className="mr-2 size-5" />
                   Book appointment
                 </Button>
-              </SignUpButton>
+              </Link>
             </div>
 
             {/* USER TESTIMONIALS */}
             <div className="pt-8">
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
                 {/* USER AVATARS */}
                 <div className="flex -space-x-3">
                   <Image

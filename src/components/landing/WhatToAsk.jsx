@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const WhatToAsk = () => {
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-background to-muted/20">
+    <section className="relative py-20 lg:py-32 px-4 md:px-6 overflow-hidden bg-gradient-to-b from-background to-muted/20">
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
@@ -12,7 +12,7 @@ const WhatToAsk = () => {
             <MessageCircleIcon className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">AI-Powered Conversations</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
               Ask about
             </span>
@@ -46,7 +46,7 @@ const WhatToAsk = () => {
                         "My tooth hurts when I bite down"
                       </p>
                     </div>
-                    <div className="bg-muted/30 rounded-2xl p-4">
+                    <div className="bg-muted/30 rounded-2xl p-4 border border-white/10">
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         Get immediate advice on pain management, possible causes, and when to see
                         a dentist urgently
@@ -78,7 +78,7 @@ const WhatToAsk = () => {
                         "How much does teeth whitening cost?"
                       </p>
                     </div>
-                    <div className="bg-muted/30 rounded-2xl p-4">
+                    <div className="bg-muted/30 rounded-2xl p-4 border border-white/10">
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         Compare treatment options, pricing ranges, and find the best whitening
                         solution for your budget
@@ -110,7 +110,7 @@ const WhatToAsk = () => {
                         "When should I replace my filling?"
                       </p>
                     </div>
-                    <div className="bg-muted/30 rounded-2xl p-4">
+                    <div className="bg-muted/30 rounded-2xl p-4 border border-white/10">
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         Learn about filling lifespan, warning signs of wear, and replacement
                         timing guidance

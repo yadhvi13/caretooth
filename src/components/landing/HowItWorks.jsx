@@ -3,10 +3,11 @@ import React from 'react'
 import Image from 'next/image'
 import { SignUpButton } from '@clerk/nextjs'
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 const HowItWorks = () => {
   return (
-    <section className='relative py-32 px-6 overflow-hidden z-10 max-w-7xl mx-auto'>
+    <section id="how-it-works" className='relative py-20 lg:py-32 px-4 md:px-6 overflow-hidden z-10 max-w-7xl mx-auto'>
 
       {/* HEADER */}
       <div className='text-center mb-20 '>
@@ -15,7 +16,7 @@ const HowItWorks = () => {
           <span className='text-sm font-medium text-primary'>Simple Process</span>
         </div>
 
-        <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight'>
+        <h2 className='text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight'>
           <span className='bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent'>
             Three steps to
           </span>
@@ -42,7 +43,7 @@ const HowItWorks = () => {
             <div className='relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-primary/10'>
 
               {/* STEP NUMBER */}
-              <div className='absolute -top-4 left-8 w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold shadow-lg'>
+              <div className='absolute -top-4 left-8 w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold shadow-lg animate-bounce lg:animate-none'>
                 1
               </div>
 
@@ -73,7 +74,7 @@ const HowItWorks = () => {
           <div className="relative group">
             <div className="relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
               {/* Step Number */}
-              <div className="absolute -top-4 left-8 w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold shadow-lg">
+              <div className="absolute -top-4 left-8 w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold shadow-lg animate-bounce lg:animate-none">
                 2
               </div>
 
@@ -104,7 +105,7 @@ const HowItWorks = () => {
           <div className="relative group">
             <div className="relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
               {/* Step Number */}
-              <div className="absolute -top-4 left-8 w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold shadow-lg">
+              <div className="absolute -top-4 left-8 w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold shadow-lg animate-bounce lg:animate-none">
                 3
               </div>
 
@@ -135,12 +136,12 @@ const HowItWorks = () => {
 
       {/* BOTTOM CTA */}
       <div className="text-center mt-16">
-        <SignUpButton mode="modal">
+        <Link href="/book">
           <Button size="lg">
             <ArrowRightIcon className="mr-2 size-5" />
             Get started now
           </Button>
-        </SignUpButton>
+        </Link>
       </div>
       
     </section>

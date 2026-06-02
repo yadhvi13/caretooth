@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const CTA = () => {
   return (
-    <section className="relative py-20 px-6 overflow-hidden bg-gradient-to-br from-muted/10 via-background to-muted/5">
+    <section className="relative py-16 md:py-20 px-4 md:px-6 overflow-hidden bg-gradient-to-br from-muted/10 via-background to-muted/5">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.03),transparent_70%)]"></div>
 
@@ -20,7 +20,7 @@ const CTA = () => {
                 <span className="text-xs font-medium text-primary">Ready When You Are</span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="text-2xl md:text-4xl font-bold leading-tight">
                 <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
                   Your dental health
                 </span>

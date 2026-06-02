@@ -2,10 +2,11 @@ import React from 'react'
 import { SignUpButton } from '@clerk/nextjs'
 import { Button } from '../ui/button'
 import { CheckCircleIcon } from 'lucide-react'
+import Link from 'next/link'
 
 const PricingSection = () => {
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-background via-muted/3 to-background">
+    <section id="pricing" className="relative py-20 lg:py-32 px-4 md:px-6 overflow-hidden bg-gradient-to-b from-background via-muted/3 to-background">
       {/* Grid Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/5 to-primary/5">
@@ -21,7 +22,7 @@ const PricingSection = () => {
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
             <span className="text-sm font-medium text-primary">Simple Pricing</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
               Choose your
             </span>
@@ -40,7 +41,7 @@ const PricingSection = () => {
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Free Plan */}
           <div className="relative group">
-            <div className="relative bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+            <div className="relative bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border-2 border-border/50 hover:border-primary lg:hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
               <div className="space-y-6">
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold">Free</h3>
@@ -50,11 +51,11 @@ const PricingSection = () => {
                   </div>
                   <p className="text-muted-foreground">Essential dental appointment booking</p>
                 </div>
-                <SignUpButton mode="modal">
+                <Link href="/book" className="w-full">
                   <Button className="w-full py-3 bg-gradient-to-r from-muted to-muted/80 text-foreground rounded-xl font-semibold">
                     Get Started Free
                   </Button>
-                </SignUpButton>
+                </Link>
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -87,7 +88,7 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <div className="relative bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-xl rounded-3xl p-8 border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20 scale-105">
+            <div className="relative bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-xl rounded-3xl p-8 border-2 border-primary/30 hover:border-primary lg:hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20 lg:scale-105">
               <div className="space-y-6">
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold">AI Basic</h3>
@@ -100,9 +101,11 @@ const PricingSection = () => {
                   <p className="text-muted-foreground">AI consultations + appointment booking</p>
                 </div>
 
-                <Button className="w-full py-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/95 hover:to-primary/85 text-primary-foreground rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                  Start AI Basic
-                </Button>
+                <Link href="/book" className="w-full">
+                  <Button className="w-full py-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/95 hover:to-primary/85 text-primary-foreground rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    Start AI Basic
+                  </Button>
+                </Link>
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -136,7 +139,7 @@ const PricingSection = () => {
 
           {/* Enterprise Plan */}
           <div className="relative group">
-            <div className="relative bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+            <div className="relative bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border-2 border-border/50 hover:border-primary lg:hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
               <div className="space-y-6">
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold">AI Pro</h3>
@@ -147,12 +150,14 @@ const PricingSection = () => {
                   <p className="text-muted-foreground">Unlimited AI consultations</p>
                 </div>
 
-                <Button
-                  variant="outline"
-                  className="w-full py-3 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 rounded-xl font-semibold transition-all duration-300"
-                >
-                  Upgrade to AI Pro
-                </Button>
+                <Link href="/book" className="w-full">
+                  <Button
+                    variant="outline"
+                    className="w-full py-3 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 rounded-xl font-semibold transition-all duration-300"
+                  >
+                    Upgrade to AI Pro
+                  </Button>
+                </Link>
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
